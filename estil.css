@@ -1,0 +1,154 @@
+:root {
+    --color-fosc: #96a4d3;
+    --color-clar: #242948;
+    --color-daurat: #a89f76;
+}
+
+body {
+    font-family: 'Dancing Script', sans-serif;
+    background-color: var(--color-fosc);
+    color: var(--color-clar);
+    text-align: center;
+    
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.primer {
+	position: relative;
+    width: 100%;
+}
+
+.primer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.noms {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+	font-size: 30px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+	width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.imatge {
+    width: 100%;
+	height: 40vh;
+}
+
+.seccio {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: var(--color-clar);
+    border-radius: 10px;
+}
+
+#primera {
+	height: 60vh;
+	margin-bottom: 60px;
+	padding: 20px;
+}
+
+#primera * {
+	margin-bottom: 30px;
+}
+
+#primera h1 {
+	font-size: 40px;
+	font-weight: 700;
+}
+
+#primera h2 {
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.borde {
+	border: solid 2px var(--color-clar);
+}
+
+.acordio {
+    background: var(--color-daurat);
+    color: var(--color-fosc);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.acordio-contingut {
+    display: none;
+    background: var(--color-clar);
+    color: var(--color-fosc);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background: var(--color-daurat);
+    color: var(--color-fosc);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: var(--color-clar);
+    color: var(--color-fosc);
+}
+
+.compte-enrere {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.compte-enrere img {
+	object-fit: cover;
+}
+
+#comptador {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-daurat);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .acordio {
+        font-size: 14px;
+       
+::contentReference[oaicite:0]{index=0}
+	}
