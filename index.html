@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitació d'Aniversari</title>
+    <link rel="stylesheet" href="estil.css">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="primer">
+	<h1 class="noms">Andrades Cacaulats Vallmi</h1>
+	<img src="convidats.jpg" alt="Foto dels convidats" class="imatge">
+</div>
+
+    <div class="container">
+        <section id="primera">
+			<div class="borde">
+			<h1>Estàs convidat a la FKN party</h1>
+			<h2>No et pots perdre la gran festa, mai vista i mai feta!</h2>
+			<h2>Deslliça per saber tota la informació i, siusplau, arriba fins al final per inscriure't</h2>
+			</div>
+		</section>
+		<section id="segona">
+        <div class="compte-enrere">
+            <img src="convidats.jpg" alt="Festa" class="imatge">
+            <div id="comptador"></div>
+        </div>
+		</section>
+
+        <div class="seccio">
+            <h2>📍 Informació</h2>
+            <div class="acordio" onclick="toggleAcordio(0)">On és?</div>
+            <div class="acordio-contingut">A [Lloc]</div>
+
+            <div class="acordio" onclick="toggleAcordio(1)">Quan és?</div>
+            <div class="acordio-contingut">El [Data]</div>
+
+            <div class="acordio" onclick="toggleAcordio(2)">Codi de vestimenta</div>
+            <div class="acordio-contingut">[Codi de vestimenta]</div>
+        </div>
+
+        <div class="seccio">
+            <h2>🎶 Pica-pica, DJ i Seguretat</h2>
+            <p>Gaudirem d'una festa amb música en directe, menjar i seguretat privada per a una experiència única!</p>
+        </div>
+
+        <div class="seccio">
+            <h2>📸 Comparteix les teves fotos!</h2>
+            <p>Després de la festa, fes clic aquí per pujar les teves fotos:</p>
+            <a href="https://carpeta-de-fotos.com" class="btn">Pujar Fotos</a>
+        </div>
+
+        <div class="seccio">
+            <h2>🎊 Ens veiem aviat! 🎊</h2>
+            <a href="formulari.html" class="btn">Confirmar Assistència</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleAcordio(index) {
+            var elements = document.querySelectorAll(".acordio-contingut");
+            elements[index].style.display = (elements[index].style.display === "block") ? "none" : "block";
+        }
+
+        function iniciarComptador() {
+            var dataFesta = new Date("2025-03-15T20:00:00").getTime();
+            var comptadorElement = document.getElementById("comptador");
+
+            var interval = setInterval(function() {
+                var ara = new Date().getTime();
+                var diferencia = dataFesta - ara;
+
+                var dies = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                var hores = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minuts = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                var segons = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+                comptadorElement.innerHTML = dies + "d " + hores + "h " + minuts + "m " + segons + "s";
+
+                if (diferencia < 0) {
+                    clearInterval(interval);
+                    comptadorElement.innerHTML = "🎉 Ja ha començat la festa! 🎉";
+                }
+            }, 1000);
+        }
+
+        document.addEventListener("DOMContentLoaded", iniciarComptador);
+    </script>
+</body>
+</html>
